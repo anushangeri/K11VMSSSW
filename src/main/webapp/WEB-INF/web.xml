@@ -1,0 +1,648 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+	<display-name>Simple Servlet Application</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>simpleServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.SimpleServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>CEmployeeTblServlet</display-name>
+		<servlet-name>CEmployeeTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.CEmployeeTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>CVMSTblServlet</display-name>
+		<servlet-name>CVMSTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.CVMSTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>DEmployeeTblServlet</display-name>
+		<servlet-name>DEmployeeTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.DEmployeeTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>AddEmployeeServlet</display-name>
+		<servlet-name>AddEmployeeServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.AddEmployeeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>UEmployeeTblServlet</display-name>
+		<servlet-name>UEmployeeTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UEmployeeTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>UVMSTblServlet</display-name>
+		<servlet-name>UVMSTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UVMSTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>TodHodSearchServlet</display-name>
+		<servlet-name>TodHodSearchServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.TodHodSearchServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>sembcorptest</display-name>
+		<servlet-name>sembcorptest</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.sembcorptest</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>LoginVerifyServlet</display-name>
+		<servlet-name>LoginVerifyServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.LoginVerifyServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>LogoutServlet</display-name>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>RoasterGenerationServlet</display-name>
+		<servlet-name>RoasterGenerationServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.RoasterGenerationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>RetrieveVisitorByNRICServlet</display-name>
+		<servlet-name>RetrieveVisitorByNRICServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.RetrieveVisitorByNRICServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>AddVisitorRecordServlet</display-name>
+		<servlet-name>AddVisitorRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.AddVisitorRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>SendOTPSMSServlet</display-name>
+		<servlet-name>SendOTPSMSServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.SendOTPSMSServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>VMSCheckNRICServlet</display-name>
+		<servlet-name>VMSCheckNRICServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.VMSCheckNRICServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>ViewVisitorRecordServlet</display-name>
+		<servlet-name>ViewVisitorRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.ViewVisitorRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>DeleteAllVisitorRecordServlet</display-name>
+		<servlet-name>DeleteAllVisitorRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.DeleteAllVisitorRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>UpdateVisitorRecordServlet</display-name>
+		<servlet-name>UpdateVisitorRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UpdateVisitorRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>UpdateVisitorRemarksRecordServlet</display-name>
+		<servlet-name>UpdateVisitorRemarksRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UpdateVisitorRemarksRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>UpdateVisitorApprovingOfficerRecordServlet</display-name>
+		<servlet-name>UpdateVisitorApprovingOfficerRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UpdateVisitorApprovingOfficerRecordServlet</servlet-class>
+	</servlet>
+	<!-- VMS Archived START  -->
+	<servlet>
+		<description />
+		<display-name>CVMSArchivedTblServlet</display-name>
+		<servlet-name>CVMSArchivedTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.CVMSArchivedTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>UVMSArchiveTblServlet</display-name>
+		<servlet-name>UVMSArchiveTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UVMSArchiveTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>ArchiveRecordsServlet</display-name>
+		<servlet-name>ArchiveRecordsServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.ArchiveRecordsServlet</servlet-class>
+	</servlet>
+	<!-- VMS Archived END  -->
+	
+	<!-- Vehicle Movement System START  -->
+	<servlet>
+		<description />
+		<display-name>VehRegLoginVerifyServlet</display-name>
+		<servlet-name>VehRegLoginVerifyServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.VehRegLoginVerifyServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>CVehMSTblServlet</display-name>
+		<servlet-name>CVehMSTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.CVehMSTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>UVehMSTblServlet</display-name>
+		<servlet-name>UVehMSTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UVehMSTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>AddVehicleRecordServlet</display-name>
+		<servlet-name>AddVehicleRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.AddVehicleRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>DeleteAllVehicleRecordServlet</display-name>
+		<servlet-name>DeleteAllVehicleRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.DeleteAllVehicleRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>RetrieveVehicleByNRICServlet</display-name>
+		<servlet-name>RetrieveVehicleByNRICServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.RetrieveVehicleByNRICServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>UpdateVehicleTimeOutRecordServlet</display-name>
+		<servlet-name>UpdateVehicleTimeOutRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UpdateVehicleTimeOutRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>UpdateVehicleLorryChetRecordServlet</display-name>
+		<servlet-name>UpdateVehicleLorryChetRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UpdateVehicleLorryChetRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>UpdateVehicleDeliveryNoticeRecordServlet</display-name>
+		<servlet-name>UpdateVehicleDeliveryNoticeRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UpdateVehicleDeliveryNoticeRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>UpdateVehicleApprovalRecordServlet</display-name>
+		<servlet-name>UpdateVehicleApprovalRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UpdateVehicleApprovalRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>ViewVehicleRecordServlet</display-name>
+		<servlet-name>ViewVehicleRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.ViewVehicleRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>UpdateVehicleRemarksRecordServlet</display-name>
+		<servlet-name>UpdateVehicleRemarksRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UpdateVehicleRemarksRecordServlet</servlet-class>
+	</servlet>
+	<!-- Vehicle Movement System END  -->
+	
+	<!-- VEHMS Archived START  -->
+	<servlet>
+		<description />
+		<display-name>CVehMSArchivedTblServlet</display-name>
+		<servlet-name>CVehMSArchivedTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.CVehMSArchivedTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>UVehMSArchiveTblServlet</display-name>
+		<servlet-name>UVehMSArchiveTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UVehMSArchiveTblServlet</servlet-class>
+	</servlet>
+	<!-- VEHMS Archived END  -->
+	
+	<!-- Client Account START  -->
+	<servlet>
+		<description />
+		<display-name>CClientAccountTblServlet</display-name>
+		<servlet-name>CClientAccountTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.CClientAccountTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>UClientAccountTblServlet</display-name>
+		<servlet-name>UClientAccountTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UClientAccountTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>AddClientAccountRecordServlet</display-name>
+		<servlet-name>AddClientAccountRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.AddClientAccountRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>ProcessPasswordServlet</display-name>
+		<servlet-name>ProcessPasswordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.ProcessPasswordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>ResetPasswordServlet</display-name>
+		<servlet-name>ResetPasswordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.ResetPasswordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>ViewClientRecordServlet</display-name>
+		<servlet-name>ViewClientRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.ViewClientRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>OverridePasswordServlet</display-name>
+		<servlet-name>OverridePasswordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.OverridePasswordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>DeleteClientAccountServlet</display-name>
+		<servlet-name>DeleteClientAccountServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.DeleteClientAccountServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>RetrieveDropdownForAddClientAccountFormServlet</display-name>
+		<servlet-name>RetrieveDropdownForAddClientAccountFormServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.RetrieveDropdownForAddClientAccountFormServlet</servlet-class>
+	</servlet>
+	<!-- Client Account END  -->
+	<!-- Site START  -->
+	<servlet>
+		<description />
+		<display-name>CSiteTblServlet</display-name>
+		<servlet-name>CSiteTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.CSiteTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>USiteTblServlet</display-name>
+		<servlet-name>USiteTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.USiteTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>AddSiteRecordServlet</display-name>
+		<servlet-name>AddSiteRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.AddSiteRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>EditSiteBySiteIDServlet</display-name>
+		<servlet-name>EditSiteBySiteIDServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.EditSiteBySiteIDServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>UpdateSiteRecordServlet</display-name>
+		<servlet-name>UpdateSiteRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UpdateSiteRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>ViewSiteRecordServlet</display-name>
+		<servlet-name>ViewSiteRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.ViewSiteRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>DeleteSiteServlet</display-name>
+		<servlet-name>DeleteSiteServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.DeleteSiteServlet</servlet-class>
+	</servlet>
+	<!-- Site END  -->
+	<!-- Dropdown List START  -->
+	<servlet>
+		<description />
+		<display-name>CDropdownTblServlet</display-name>
+		<servlet-name>CDropdownTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.CDropdownTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>AddDropdownRecordServlet</display-name>
+		<servlet-name>AddDropdownRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.AddDropdownRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>ViewDropdownRecordServlet</display-name>
+		<servlet-name>ViewDropdownRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.ViewDropdownRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>RetrieveDropdownByKeyServlet</display-name>
+		<servlet-name>RetrieveDropdownByKeyServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.RetrieveDropdownByKeyServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+		<display-name>DeleteDropdownbyDropdownIdServlet</display-name>
+		<servlet-name>DeleteDropdownbyDropdownIdServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.DeleteDropdownbyDropdownIdServlet</servlet-class>
+	</servlet>	
+	<!--  Dropdown List END  -->
+	
+	<servlet-mapping>
+		<servlet-name>simpleServlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CEmployeeTblServlet</servlet-name>
+		<url-pattern>/createEmpTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CVMSTblServlet</servlet-name>
+		<url-pattern>/createVmsTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DEmployeeTblServlet</servlet-name>
+		<url-pattern>/deleteEmpTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddEmployeeServlet</servlet-name>
+		<url-pattern>/addEmployee</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UEmployeeTblServlet</servlet-name>
+		<url-pattern>/updateEmpTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UVMSTblServlet</servlet-name>
+		<url-pattern>/updateVmsTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TodHodSearchServlet</servlet-name>
+		<url-pattern>/todHodSearch</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>sembcorptest</servlet-name>
+		<url-pattern>/sembcorptest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginVerifyServlet</servlet-name>
+		<url-pattern>/loginVerify</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RoasterGenerationServlet</servlet-name>
+		<url-pattern>/roastergeneration</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RetrieveVisitorByNRICServlet</servlet-name>
+		<url-pattern>/retrieveToPopulate</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddVisitorRecordServlet</servlet-name>
+		<url-pattern>/addVisitor</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VMSCheckNRICServlet</servlet-name>
+		<url-pattern>/vmsCheckNRIC</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ViewVisitorRecordServlet</servlet-name>
+		<url-pattern>/vms</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateVisitorRecordServlet</servlet-name>
+		<url-pattern>/updateVisitor</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateVisitorRemarksRecordServlet</servlet-name>
+		<url-pattern>/updateVisitorRemarks</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateVisitorApprovingOfficerRecordServlet</servlet-name>
+		<url-pattern>/approveVisitor</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteAllVisitorRecordServlet</servlet-name>
+		<url-pattern>/deleteAllVisitor</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SendOTPSMSServlet</servlet-name>
+		<url-pattern>/getSMSOTP</url-pattern>
+	</servlet-mapping>
+
+	<!-- VMS Archived START  -->
+	<servlet-mapping>
+		<servlet-name>CVMSArchivedTblServlet</servlet-name>
+		<url-pattern>/createVmsArchivedTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UVMSArchiveTblServlet</servlet-name>
+		<url-pattern>/updateVmsArchivedTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ArchiveRecordsServlet</servlet-name>
+		<url-pattern>/archiveRecords</url-pattern>
+	</servlet-mapping>
+	<!-- VMS Archived END  -->
+	
+	<!-- Vehicle Movement System START  -->
+	<servlet-mapping>
+		<servlet-name>VehRegLoginVerifyServlet</servlet-name>
+		<url-pattern>/vehRegLoginVerify</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CVehMSTblServlet</servlet-name>
+		<url-pattern>/createVehmsTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UVehMSTblServlet</servlet-name>
+		<url-pattern>/updateVehmsTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddVehicleRecordServlet</servlet-name>
+		<url-pattern>/addVehicle</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteAllVehicleRecordServlet</servlet-name>
+		<url-pattern>/deleteAllVehicle</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RetrieveVehicleByNRICServlet</servlet-name>
+		<url-pattern>/retrieveVehToPopulate</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateVehicleTimeOutRecordServlet</servlet-name>
+		<url-pattern>/updateVehTimeOut</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateVehicleLorryChetRecordServlet</servlet-name>
+		<url-pattern>/updateVehLorryChet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateVehicleDeliveryNoticeRecordServlet</servlet-name>
+		<url-pattern>/updateVehDeliveryNotice</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateVehicleRemarksRecordServlet</servlet-name>
+		<url-pattern>/updateVehRemarks</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateVehicleApprovalRecordServlet</servlet-name>
+		<url-pattern>/updateVehAprrove</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ViewVehicleRecordServlet</servlet-name>
+		<url-pattern>/vehms</url-pattern>
+	</servlet-mapping>
+	<!-- Vehicle Movement System END  -->
+
+	<!-- VEHMS Archived START  -->
+	<servlet-mapping>
+		<servlet-name>CVehMSArchivedTblServlet</servlet-name>
+		<url-pattern>/createVehMSArchivedTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UVehMSArchiveTblServlet</servlet-name>
+		<url-pattern>/updateVehmsArchivedTbl</url-pattern>
+	</servlet-mapping>	
+	<!-- VEHMS Archived END  -->
+	
+	<!-- Client Account START  -->
+	<servlet-mapping>
+		<servlet-name>CClientAccountTblServlet</servlet-name>
+		<url-pattern>/clientAccountTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UClientAccountTblServlet</servlet-name>
+		<url-pattern>/updateClientAccountTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddClientAccountRecordServlet</servlet-name>
+		<url-pattern>/addClientAccount</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProcessPasswordServlet</servlet-name>
+		<url-pattern>/verifyLogin</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ResetPasswordServlet</servlet-name>
+		<url-pattern>/resetPassword</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ViewClientRecordServlet</servlet-name>
+		<url-pattern>/retrieveAllClientRecords</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OverridePasswordServlet</servlet-name>
+		<url-pattern>/overridePassword</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteClientAccountServlet</servlet-name>
+		<url-pattern>/deleteClientRecord</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RetrieveDropdownForAddClientAccountFormServlet</servlet-name>
+		<url-pattern>/retrieveDropdownForClientForm</url-pattern>
+	</servlet-mapping>
+	<!-- Client Account END  -->
+	<!-- Site START  -->
+	<servlet-mapping>
+		<servlet-name>CSiteTblServlet</servlet-name>
+		<url-pattern>/createSiteTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>USiteTblServlet</servlet-name>
+		<url-pattern>/updateSiteTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddSiteRecordServlet</servlet-name>
+		<url-pattern>/addSite</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EditSiteBySiteIDServlet</servlet-name>
+		<url-pattern>/editSite</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateSiteRecordServlet</servlet-name>
+		<url-pattern>/updateSite</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ViewSiteRecordServlet</servlet-name>
+		<url-pattern>/retrieveAllSiteRecords</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteSiteServlet</servlet-name>
+		<url-pattern>/deleteSite</url-pattern>
+	</servlet-mapping>
+	<!-- Site END  -->
+	<!-- Dropdown START  -->
+	<servlet-mapping>
+		<servlet-name>CDropdownTblServlet</servlet-name>
+		<url-pattern>/createDropdownTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddDropdownRecordServlet</servlet-name>
+		<url-pattern>/addDropdown</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ViewDropdownRecordServlet</servlet-name>
+		<url-pattern>/retrieveAllDropdownRecords</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RetrieveDropdownByKeyServlet</servlet-name>
+		<url-pattern>/getDropdownList</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteDropdownbyDropdownIdServlet</servlet-name>
+		<url-pattern>/deleteDropdownbyDropdownId</url-pattern>
+	</servlet-mapping>
+	<!-- Dropdown END  -->
+	
+</web-app>

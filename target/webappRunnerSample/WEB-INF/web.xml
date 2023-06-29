@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+	<display-name>Simple Servlet Application</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>simpleServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.SimpleServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>CEmployeeTblServlet</display-name>
+		<servlet-name>CEmployeeTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.CEmployeeTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>CVMSTblServlet</display-name>
+		<servlet-name>CVMSTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.CVMSTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>DEmployeeTblServlet</display-name>
+		<servlet-name>DEmployeeTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.DEmployeeTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>AddEmployeeServlet</display-name>
+		<servlet-name>AddEmployeeServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.AddEmployeeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>UEmployeeTblServlet</display-name>
+		<servlet-name>UEmployeeTblServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UEmployeeTblServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>TodHodSearchServlet</display-name>
+		<servlet-name>TodHodSearchServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.TodHodSearchServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>sembcorptest</display-name>
+		<servlet-name>sembcorptest</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.sembcorptest</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>LoginVerifyServlet</display-name>
+		<servlet-name>LoginVerifyServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.LoginVerifyServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>LogoutServlet</display-name>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>RoasterGenerationServlet</display-name>
+		<servlet-name>RoasterGenerationServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.RoasterGenerationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>RetrieveVisitorByNRICServlet</display-name>
+		<servlet-name>RetrieveVisitorByNRICServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.RetrieveVisitorByNRICServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>AddVisitorRecordServlet</display-name>
+		<servlet-name>AddVisitorRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.AddVisitorRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>VMSCheckNRICServlet</display-name>
+		<servlet-name>VMSCheckNRICServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.VMSCheckNRICServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>ViewVisitorRecordServlet</display-name>
+		<servlet-name>ViewVisitorRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.ViewVisitorRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>DeleteAllVisitorRecordServlet</display-name>
+		<servlet-name>DeleteAllVisitorRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.DeleteAllVisitorRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>UpdateVisitorRecordServlet</display-name>
+		<servlet-name>UpdateVisitorRecordServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.UpdateVisitorRecordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description />
+
+		<display-name>VehRegLoginVerifyServlet</display-name>
+		<servlet-name>VehRegLoginVerifyServlet</servlet-name>
+		<servlet-class>net.javatutorial.tutorials.VehRegLoginVerifyServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>simpleServlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CEmployeeTblServlet</servlet-name>
+		<url-pattern>/createEmpTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CVMSTblServlet</servlet-name>
+		<url-pattern>/createVmsTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DEmployeeTblServlet</servlet-name>
+		<url-pattern>/deleteEmpTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddEmployeeServlet</servlet-name>
+		<url-pattern>/addEmployee</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UEmployeeTblServlet</servlet-name>
+		<url-pattern>/updateEmpTbl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TodHodSearchServlet</servlet-name>
+		<url-pattern>/todHodSearch</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>sembcorptest</servlet-name>
+		<url-pattern>/sembcorptest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginVerifyServlet</servlet-name>
+		<url-pattern>/loginVerify</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RoasterGenerationServlet</servlet-name>
+		<url-pattern>/roastergeneration</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RetrieveVisitorByNRICServlet</servlet-name>
+		<url-pattern>/retrieveToPopulate</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddVisitorRecordServlet</servlet-name>
+		<url-pattern>/addVisitor</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VMSCheckNRICServlet</servlet-name>
+		<url-pattern>/vmsCheckNRIC</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ViewVisitorRecordServlet</servlet-name>
+		<url-pattern>/vms</url-pattern>
+	</servlet-mapping>
+		<servlet-mapping>
+		<servlet-name>UpdateVisitorRecordServlet</servlet-name>
+		<url-pattern>/updateVisitor</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteAllVisitorRecordServlet</servlet-name>
+		<url-pattern>/deleteAllVisitor</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VehRegLoginVerifyServlet</servlet-name>
+		<url-pattern>/vehRegLoginVerify</url-pattern>
+	</servlet-mapping>
+</web-app>

@@ -1,0 +1,12 @@
+net\javatutorial\DAO\VMSManagerDAO.class
+net\javatutorial\tutorials\SimpleServlet.class
+net\javatutorial\DAO\VMSTblDAO.class
+net\javatutorial\tutorials\Main.class
+net\javatutorial\tutorials\VMSCheckNRICServlet.class
+net\javatutorial\tutorials\ViewVisitorRecordServlet.class
+net\javatutorial\tutorials\DeleteAllVisitorRecordServlet.class
+net\javatutorial\tutorials\CVMSTblServlet.class
+net\javatutorial\entity\Visitor.class
+net\javatutorial\tutorials\RetrieveVisitorByNRICServlet.class
+net\javatutorial\tutorials\UpdateVisitorRecordServlet.class
+net\javatutorial\tutorials\AddVisitorRecordServlet.class
