@@ -100,7 +100,7 @@ public class VMSManagerDAO {
 	        		+ "SET REMARKS = '" + v.getRemarks() + "' ," 
 	        		+ "LAST_MODIFIED_BY = '" + v.getLastModifiedBy() + "',"
 	    	    	+ "LAST_MODIFIED_BY_DT = '" + v.getLastModifiedByDt() + "'"	 
-	        		+ "WHERE VMS_ID = '" + v.getVmsId() + "';");
+	        		+ " WHERE VMS_ID = '" + v.getVmsId() + "';");
 	        rs = stmt.executeQuery("SELECT LAST(FIRST_NAME) FROM VMS WHERE VMS_ID ='" + v.getVmsId() +"';");
 	        while (rs.next()) {
 	        	message = "Successfully updated: " + rs.getTimestamp("tick");
@@ -133,7 +133,7 @@ public class VMSManagerDAO {
 	        		+ "SET APPROVING_OFFICER = '" + v.getApprovingOfficer() + "', " 
 	        		+ "LAST_MODIFIED_BY = '" + v.getLastModifiedBy() + "',"
 	    	    	+ "LAST_MODIFIED_BY_DT = '" + v.getLastModifiedByDt() + "'"	 
-	        		+ "WHERE VMS_ID = '" + v.getVmsId() + "';");
+	        		+ " WHERE VMS_ID = '" + v.getVmsId() + "';");
 	        rs = stmt.executeQuery("SELECT LAST(FIRST_NAME) FROM VMS WHERE VMS_ID ='" + v.getVmsId() +"';");
 	        while (rs.next()) {
 	        	message = "Successfully updated: " + rs.getTimestamp("tick");
@@ -251,7 +251,7 @@ public class VMSManagerDAO {
             		"              APPROVING_OFFICER, TIME_IN_DT, TIME_OUT_DT,"
             		+ " CREATED_BY,CREATED_BY_DT,  LAST_MODIFIED_BY, LAST_MODIFIED_BY_DT "
             		+ " FROM VMS WHERE DATE(TIME_IN_DT) = DATE(CAST('" + timestamp + "' AS TIMESTAMP))"
-            		+ "ORDER BY TIME_IN_DT DESC; ";
+            		+ " ORDER BY TIME_IN_DT DESC; ";
             pstmt = connection.prepareStatement(sql);
 
             rs = pstmt.executeQuery();
@@ -303,7 +303,7 @@ public class VMSManagerDAO {
             		"              APPROVING_OFFICER, TIME_IN_DT, TIME_OUT_DT,"
             		+ " CREATED_BY,CREATED_BY_DT,  LAST_MODIFIED_BY, LAST_MODIFIED_BY_DT "
             		+ " FROM VMS WHERE DATE(TIME_IN_DT) >= DATE(CAST('" + timestamp + "' AS TIMESTAMP)) - 10"
-            		+ "ORDER BY TIME_IN_DT DESC; ";
+            		+ " ORDER BY TIME_IN_DT DESC; ";
             pstmt = connection.prepareStatement(sql);
 
             rs = pstmt.executeQuery();

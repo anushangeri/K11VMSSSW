@@ -105,7 +105,7 @@ public class VehMSManagerDAO {
 	        		+ "SET TIME_OUT_DT = '" + v.getTimeOutDt() + "',"
 	        		+ "LAST_MODIFIED_BY = '" + v.getLastModifiedBy() + "',"
 	    	        + "LAST_MODIFIED_BY_DT = '" + v.getLastModifiedByDt() + "'"
-	        		+ "WHERE VEHICLE_ID = '" + v.getVehicleId() + "';");
+	        		+ " WHERE VEHICLE_ID = '" + v.getVehicleId() + "';");
 	        rs = stmt.executeQuery("SELECT NAME FROM VEHMS WHERE VEHICLE_ID ='" + v.getVehicleId() +"';");
 	        while (rs.next()) {
 	        	message = "Read from DB: " + rs.getTimestamp("tick");
@@ -140,7 +140,7 @@ public class VehMSManagerDAO {
 	        		+ "SET TIME_OUT_DT = '" + v.getTimeInDt() + "',"
 	        		+ "LAST_MODIFIED_BY = '" + v.getLastModifiedBy() + "',"
 	    	        + "LAST_MODIFIED_BY_DT = '" + v.getLastModifiedByDt() + "'"
-	        		+ "WHERE VEHICLE_ID = '" + v.getVehicleId() + "';");
+	        		+ " WHERE VEHICLE_ID = '" + v.getVehicleId() + "';");
 	        rs = stmt.executeQuery("SELECT NAME FROM VEHMS WHERE VEHICLE_ID ='" + v.getVehicleId() +"';");
 	        while (rs.next()) {
 	        	message = "Read from DB: " + rs.getTimestamp("tick");
@@ -342,7 +342,7 @@ public class VehMSManagerDAO {
             		+ "VISIT_PURPOSE, TEMPERATURE, SEAL_NO, CONTAINER_SIZE, REMARKS, "
             		+ "WAREHOUSE_LEVEL, SITE, WAREHOUSE_APPROVER, TIME_IN_DT, TIME_OUT_DT,"
             		+ "CREATED_BY, CREATED_BY_DT, LAST_MODIFIED_BY, LAST_MODIFIED_BY_DT \r\n"
-            		+ "FROM VEHMS ORDER BY TIME_IN_DT DESC; ";
+            		+ " FROM VEHMS ORDER BY TIME_IN_DT DESC; ";
             pstmt = connection.prepareStatement(sql);
 
             rs = pstmt.executeQuery();
