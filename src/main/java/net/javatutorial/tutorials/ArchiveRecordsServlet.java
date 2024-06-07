@@ -426,7 +426,7 @@ public class ArchiveRecordsServlet extends HttpServlet {
 					MimeMessage message = new MimeMessage(session);
 					message.setFrom(new InternetAddress(user));
 					message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-					message.setSubject("K11 VMS Records SSW Pasir Panjang");
+					message.setSubject("K11 VMS Records for SSW Pasir Panjang");
 
 					// Create the message part
 					BodyPart messageBodyPart = new MimeBodyPart();
