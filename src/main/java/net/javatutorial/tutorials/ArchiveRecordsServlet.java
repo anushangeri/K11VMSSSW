@@ -2,11 +2,14 @@ package net.javatutorial.tutorials;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Properties;
 import java.util.TimeZone;
 
@@ -57,7 +60,41 @@ public class ArchiveRecordsServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		try {
+			//before we move records over, we need to update timeout
+			//entry in the day shift 8am to 8pm
+			// Get the current date and time in the specified timezone
+	        ZoneId zoneId = ZoneId.of("Singapore");
+	        ZonedDateTime zonedDateTime = ZonedDateTime.now(zoneId);
+	
+	        // Calculate the previous day
+	        ZonedDateTime previousDate = zonedDateTime.minusDays(1);
+	
+	        // Set the time range for the previous day (12 AM to 7 PM)
+	        ZonedDateTime startOfPreviousDay = previousDate.toLocalDate().atStartOfDay(zoneId);
+	        ZonedDateTime endOfPreviousDayAt7PM = previousDate.withHour(19).withMinute(0).withSecond(0).withNano(0);
+	        
+	        // Convert to Timestamp
+	        Date startDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(startOfPreviousDay.toString().substring(0, 16).replace("T", " ") + ":00");
+	        Timestamp startTimestamp = new Timestamp(startDate.getTime());
+	        
+	        Date endDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(endOfPreviousDayAt7PM.toString().substring(0, 16).replace("T", " ") + ":00");
+	        Timestamp endTimestamp = new Timestamp(endDate.getTime());
+        
+	        // Example: Timestamp for TIME_OUT_DT and LAST_MODIFIED_BY_DT
+	        Timestamp timestamp = endTimestamp;
+	        Timestamp systemDate = Timestamp.from(ZonedDateTime.now(zoneId).toInstant());
+	        
+	        System.out.println(timestamp + " , " + systemDate + " , " + startTimestamp + " , " + endTimestamp);
+	        
+	        String updateRecordsVisitorMessage = VMSManagerDAO.updateStandardVisitorTimeOutDt(timestamp, systemDate, startTimestamp, endTimestamp);
+	        String updateRecordsVehicleMessage = VehMSManagerDAO.updateStandardVehicleTimeOutDt(timestamp, systemDate, startTimestamp, endTimestamp);
+	        
+	        System.out.println("updateRecordsMessage: " + updateRecordsVisitorMessage + " , " + updateRecordsVehicleMessage);
+		}
+        catch(Exception e) {
+            System.out.println("Exception :" + e);
+        }
 		//archiving visitor records
 		String visitorMessage = VMSArchiveManagerDAO.moveVisitor();
 		System.out.println(visitorMessage);
@@ -99,7 +136,7 @@ public class ArchiveRecordsServlet extends HttpServlet {
 				System.out.println("retrieved vehicles current month successful");
 				
 				LocalDate localDate = LocalDate.now(ZoneId.of("GMT+08:00"));
-				String fileName = "vms_records_swv"+ localDate +".xls";
+				String fileName = "vms_records_dev"+ localDate +".xls";
 				
 				// workbook object
 				XSSFWorkbook workbook = new XSSFWorkbook();
@@ -367,10 +404,12 @@ public class ArchiveRecordsServlet extends HttpServlet {
 				workbook.close();
 				// out.close();
 
-				
+				String to = "k11.sivalingam@gmail.com";// change accordingly
 				final String user = "shangeri.sivalingam@k11.com.sg";// change accordingly
-				final String password = "Sh@ngeri94";// change accordingly
-
+				//final String password = "Sh@ngeri94";// change accordingly
+				
+				final String password = new String(System.getenv("EMAIL_PASSWORD"));
+				
 				Properties properties = System.getProperties();
 				properties.setProperty("mail.smtp.host", "mail.k11.com.sg");
 				properties.put("mail.smtp.auth", "true");
@@ -386,8 +425,8 @@ public class ArchiveRecordsServlet extends HttpServlet {
 				try {
 					MimeMessage message = new MimeMessage(session);
 					message.setFrom(new InternetAddress(user));
-					message.addRecipients(Message.RecipientType.TO, InternetAddress.parse("k11.sivalingam@gmail.com"));
-					message.setSubject("K11 VMS Records for SSW");
+					message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+					message.setSubject("K11 VMS Records SSW Pasir Panjang");
 
 					// Create the message part
 					BodyPart messageBodyPart = new MimeBodyPart();

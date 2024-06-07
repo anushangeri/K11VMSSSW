@@ -34,9 +34,9 @@ public class VMSManagerDAO {
 	        		+v.getVisitPurpose()+ "','" +v.getTemperature()+ "','" +v.getApprovingOfficer()+ "','" +v.getTimeInDt()+ "','"
 	        		+v.getCreatedBy()+ "','" +v.getLastModifiedBy()+ "','" +v.getCreatedByDt()+ "','" +v.getLastModifiedByDt()+ "'"
 	        		+ ");");
-	        rs = stmt.executeQuery("SELECT LAST(FIRST_NAME) FROM VMS;");
+	        rs = stmt.executeQuery("SELECT NAME FROM VMS;");
 	        while (rs.next()) {
-	        	message = "Read from DB: " + rs.getTimestamp("tick");
+	        	message = "Read from DB: " + rs.getString(1);
 	        }
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
@@ -68,9 +68,9 @@ public class VMSManagerDAO {
 	        		+ "LAST_MODIFIED_BY = '" + v.getLastModifiedBy() + "',"
 	    	    	+ "LAST_MODIFIED_BY_DT = '" + v.getLastModifiedByDt() + "'"	 
 	        		+ "   WHERE VMS_ID = '" + v.getVmsId() + "';");
-	        rs = stmt.executeQuery("SELECT LAST(FIRST_NAME) FROM VMS WHERE VMS_ID ='" + v.getVmsId() +"';");
+	        rs = stmt.executeQuery("SELECT NAME FROM VMS WHERE VMS_ID ='" + v.getVmsId() +"';");
 	        while (rs.next()) {
-	        	message = "Successfully updated: " + rs.getTimestamp("tick");
+	        	message = "Successfully updated: " + rs.getString(1);
 	        }
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
@@ -101,9 +101,9 @@ public class VMSManagerDAO {
 	        		+ "LAST_MODIFIED_BY = '" + v.getLastModifiedBy() + "',"
 	    	    	+ "LAST_MODIFIED_BY_DT = '" + v.getLastModifiedByDt() + "'"	 
 	        		+ " WHERE VMS_ID = '" + v.getVmsId() + "';");
-	        rs = stmt.executeQuery("SELECT LAST(FIRST_NAME) FROM VMS WHERE VMS_ID ='" + v.getVmsId() +"';");
+	        rs = stmt.executeQuery("SELECT NAME FROM VMS WHERE VMS_ID ='" + v.getVmsId() +"';");
 	        while (rs.next()) {
-	        	message = "Successfully updated: " + rs.getTimestamp("tick");
+	        	message = "Successfully updated: " + rs.getString(1);
 	        }
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
@@ -134,9 +134,9 @@ public class VMSManagerDAO {
 	        		+ "LAST_MODIFIED_BY = '" + v.getLastModifiedBy() + "',"
 	    	    	+ "LAST_MODIFIED_BY_DT = '" + v.getLastModifiedByDt() + "'"	 
 	        		+ " WHERE VMS_ID = '" + v.getVmsId() + "';");
-	        rs = stmt.executeQuery("SELECT LAST(FIRST_NAME) FROM VMS WHERE VMS_ID ='" + v.getVmsId() +"';");
+	        rs = stmt.executeQuery("SELECT NAME FROM VMS WHERE VMS_ID ='" + v.getVmsId() +"';");
 	        while (rs.next()) {
-	        	message = "Successfully updated: " + rs.getTimestamp("tick");
+	        	message = "Successfully updated: " + rs.getString(1);
 	        }
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
@@ -153,6 +153,46 @@ public class VMSManagerDAO {
 		
 		return message;
 	}
+	
+	public static String updateStandardVisitorTimeOutDt(Timestamp timestamp, Timestamp systemDate, Timestamp startTimestamp, Timestamp endTimestamp){
+		Connection connection = null;
+		ResultSet rs = null;
+		PreparedStatement pstmt = null;
+		String message = "";
+		
+		String sql = "SET TIMEZONE = 'Singapore'; "
+				+ " UPDATE VMS SET TIME_OUT_DT = '" + timestamp + "' , "
+				+ " LAST_MODIFIED_BY = ?, "
+				+ " LAST_MODIFIED_BY_DT = '" + systemDate + "' "
+				+ " WHERE TIME_IN_DT >= '" + startTimestamp + "' "
+				+ " AND TIME_IN_DT < '" + endTimestamp + "' "
+				+ " AND TIME_OUT_DT IS NULL ;";
+		
+		try {
+			connection = Main.getConnection();
+			pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1, "SYSTEM");
+
+            // Execute the update
+            int rowsAffected = pstmt.executeUpdate();
+            message = "Rows affected: " + rowsAffected;
+	        
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			message = "" + e;
+			//e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			message = "" + e;
+		}
+		finally {
+        	Main.close(connection, pstmt, rs);
+        }
+		
+		return message;
+	}
+	
 	public static int getNextVal(){
 		Connection connection = null;
 		ResultSet rs = null;
