@@ -8,8 +8,10 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 import java.util.TimeZone;
 
@@ -113,6 +115,11 @@ public class ArchiveRecordsServlet extends HttpServlet {
 		if(cal.get(Calendar.DAY_OF_MONTH) == lastDay) {
 			System.out.println( "it is the last day of the month, so batch job will do archive db clean up and email results");
 			
+			final String password = new String(System.getenv("EMAIL_PASSWORD"));
+			final String excelFileName = new String(System.getenv("FILE_NAME"));
+			final String clientRecipients = new String(System.getenv("CLIENT_RECIPIENTS"));
+			final String emailSubject = new String(System.getenv("EMAIL_SUBJECT"));
+			
 			try 
 			{ 
 				Calendar calPreviousMonth = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
@@ -136,7 +143,7 @@ public class ArchiveRecordsServlet extends HttpServlet {
 				System.out.println("retrieved vehicles current month successful");
 				
 				LocalDate localDate = LocalDate.now(ZoneId.of("GMT+08:00"));
-				String fileName = "vms_records_dev"+ localDate +".xls";
+				String fileName = excelFileName + localDate +".xls";
 				
 				// workbook object
 				XSSFWorkbook workbook = new XSSFWorkbook();
@@ -408,7 +415,7 @@ public class ArchiveRecordsServlet extends HttpServlet {
 				final String user = "shangeri.sivalingam@k11.com.sg";// change accordingly
 				//final String password = "Sh@ngeri94";// change accordingly
 				
-				final String password = new String(System.getenv("EMAIL_PASSWORD"));
+				
 				
 				Properties properties = System.getProperties();
 				properties.setProperty("mail.smtp.host", "mail.k11.com.sg");
@@ -425,8 +432,31 @@ public class ArchiveRecordsServlet extends HttpServlet {
 				try {
 					MimeMessage message = new MimeMessage(session);
 					message.setFrom(new InternetAddress(user));
-					message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-					message.setSubject("K11 VMS Records for SSW Pasir Panjang");
+					
+					// Create an ArrayList to hold email addresses
+			        List<String> emailList = new ArrayList<>();
+			        emailList.add(to);
+			        
+					if (clientRecipients.contains(",")) {
+			            // Split the string by comma and trim any extra whitespace
+			            String[] emailAddresses = clientRecipients.split("\\s*,\\s*");
+			            
+			            // Convert the array to a List using Arrays.asList()
+			            emailList.addAll(Arrays.asList(emailAddresses));
+			            
+			        } else {
+			        	// Single recipient
+			        	emailList.add(clientRecipients);
+			        }
+					// Create an array of new InternetAddress object
+		            InternetAddress[] addresses = new InternetAddress[emailList.size()];
+		            for (int i = 0; i < emailList.size(); i++) {
+		                addresses[i] = new InternetAddress(emailList.get(i));
+		                
+		            }
+		            // Add all recipients
+		            message.addRecipients(Message.RecipientType.TO, addresses);
+					message.setSubject(emailSubject);
 
 					// Create the message part
 					BodyPart messageBodyPart = new MimeBodyPart();
