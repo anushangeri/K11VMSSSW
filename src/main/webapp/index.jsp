@@ -1,77 +1,36 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="loginVMSCSS.jsp"%>
-<%@page import="java.util.*"%>
-<%@page import="java.io.IOException"%>
-<%@page import="java.net.URL"%>
-<%@page import="com.google.gdata.client.spreadsheet.SpreadsheetService"%>
-<%@page
-	import="com.google.gdata.data.spreadsheet.CustomElementCollection"%>
-<%@page import="com.google.gdata.data.spreadsheet.ListEntry"%>
-<%@page import="com.google.gdata.data.spreadsheet.ListFeed"%>
-<%@page import="com.google.gdata.util.ServiceException"%>
-<%@page import="net.javatutorial.entity.*"%>
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
-<script
-	src="https://drvic10k.github.io/bootstrap-sortable/Scripts/bootstrap-sortable.js"
-	type="text/javascript"></script>
-<link
-	href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
-	rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>System Selection</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <script src="https://drvic10k.github.io/bootstrap-sortable/Scripts/bootstrap-sortable.js" type="text/javascript"></script>
 </head>
-<body>
-	<%
-		session.removeAttribute("usertype");
-		session.removeAttribute("name");
-		session.removeAttribute("idNo");
-	%>
-	<center>
-		<div class="container">
-			<form method="POST" action="vmsCheckNRIC.jsp">
-				<input type="hidden" id="recordType" name="recordType"
-					value="visitorRecord">
-				<button type="submit" id="removeBackground">
-					<div class="card bg-dark text-white">
-						<div class="card-body font-size-percent">
-							Are you one of the following? <br> 
-							• visitor <br> 
-							• staff <br> 
-							• government agency <br> 
-							Select this.
-						</div>
-					</div>
-				</button>
-			</form>
-			<form method="POST" action="vmsCheckNRIC.jsp">
-				<input type="hidden" id="recordType" name="recordType"
-					value="vehicleRecord">
-				<button type="submit" id="removeBackground">
-					<div class="card bg-warning text-white">
-						<div class="card-body font-size-percent">
-							Are you one of the following? <br> 
-							• gate pass <br> 
-							• commercial vehicle <br>
-							• container <br> 
-							Select this.
-						</div>
-					</div>
-				</button>
-			</form>
-			<form method="POST" action="clientLogin.jsp">
-				<button type="submit" id="removeBackground">
-					<div class="card bg-primary text-white">
-						<div class="card-body font-size-percent">
-							Warehouse Personnel. 
-							Select this.
-						</div>
-					</div>
-				</button>
-			</form>
-		</div>
-	</center>
+<body class="bg-light">
+
+<%
+    session.removeAttribute("usertype");
+    session.removeAttribute("name");
+    session.removeAttribute("idNo");
+%>
+
+<div class="container text-center" style="margin-top: 100px;">
+    <div class="col-md-6 col-sm-8 col-xs-10 center-block" style="float:none;">
+
+        <a href="vmsDashboard.jsp" class="btn btn-info btn-lg text-white w-100 mb-4">
+            <strong>Visitor Management System</strong>
+        </a>
+
+        <a href="clockingMain.jsp" class="btn btn-info btn-lg text-white w-100">
+            <strong>K11 Clocking System</strong>
+        </a>
+
+    </div>
+</div>
+
 </body>
 </html>

@@ -48,6 +48,16 @@
 					</div>
 				</button>
 			</form>
+			<form action="viewClocking" method="get" >
+				<button type="submit" id="removeBackground">
+					<div class="card bg-primary text-white">
+						<div class="card-body font-size-percent">
+							View Clocking Records<br>
+							Select this.
+						</div>
+					</div>
+				</button>
+			</form>
 			<br>
 		</div>
 	</center>
@@ -79,6 +89,10 @@
 					role="button" aria-pressed="true">Create Dropdown Record</a>
 					<a href="/retrieveAllDropdownRecords" class="btn btn-warning btn-lg active"
 					role="button" aria-pressed="true">Manage Dropdown Records</a>
+					<br>
+					
+					<a href="clockingQRCodeGenerator.jsp" class="btn btn-warning btn-lg active"
+					role="button" aria-pressed="true">QR Code Generator [for Clocking]</a>
 				<%	
 				}
 			%>
